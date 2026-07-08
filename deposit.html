@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Deposit Funds | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/deposit.css">
+
+</head>
+
+<body>
+
+<!-- =====================================
+SIDEBAR
+===================================== -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Tesla</span> Investment
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="deposit.html">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+<span>Deposit</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="transactions.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<span>Transactions</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Profile</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- =====================================
+MAIN CONTENT
+===================================== -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2>
+
+Deposit Funds
+
+</h2>
+
+<p>
+
+Fund your investment account securely.
+
+</p>
+
+</div>
+
+</header>
+
+<div id="alertBox"></div>
+
+<section class="deposit-grid">
+    <!-- =====================================
+LEFT CARD
+===================================== -->
+
+<div class="deposit-card">
+
+<h2>
+
+Create Deposit
+
+</h2>
+
+<form
+id="depositForm">
+
+<div class="input-group">
+
+<label>
+
+Deposit Amount (USD)
+
+</label>
+
+<input
+type="number"
+id="amount"
+placeholder="Minimum $200,000,000"
+min="10"
+required>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Payment Method
+
+</label>
+
+<select
+id="paymentMethod"
+required>
+
+<option value="">
+
+Select Payment Method
+
+</option>
+
+<option value="usdt">
+
+USDT (TRC20)
+
+</option>
+
+<option value="bitcoin">
+
+Bitcoin (BTC)
+
+</option>
+
+<option value="ethereum">
+
+Ethereum (ETH)
+
+</option>
+
+<option value="Etransfer">
+
+E- transfer
+
+</option>
+
+</select>
+
+</div>
+
+<!-- Wallet Card -->
+
+<div
+id="walletCard"
+class="wallet-card"
+style="display:none;">
+
+<h3
+id="walletTitle">
+
+Wallet Information
+
+</h3>
+
+<p>
+
+Network
+
+</p>
+
+<div
+id="walletNetwork"
+class="wallet-network">
+
+
+
+</div>
+
+<p>
+
+Wallet Address
+
+</p>
+
+<div class="wallet-address">
+
+<input
+type="text"
+id="walletAddress"
+readonly>
+
+<button
+type="button"
+id="copyAddress">
+
+<i class="fa-solid fa-copy"></i>
+
+Copy
+
+</button>
+
+</div>
+
+<small>
+
+Always verify the network before sending your payment.
+
+</small>
+
+</div>
+<!-- =====================================
+PAYMENT PROOF
+===================================== -->
+
+<div class="input-group">
+
+<label>
+
+Payment Proof
+
+</label>
+
+<input
+type="file"
+id="paymentProof"
+accept=".jpg,.jpeg,.png,.webp,.pdf">
+
+<small>
+
+Upload your payment receipt or screenshot.
+
+</small>
+
+</div>
+
+<!-- IMAGE PREVIEW -->
+
+<div
+id="proofPreviewContainer"
+class="proof-preview"
+style="display:none;">
+
+<img
+id="proofPreview"
+src=""
+alt="Payment Proof">
+
+</div>
+
+<!-- CONFIRMATION -->
+
+<div class="checkbox-group">
+
+<label>
+
+<input
+type="checkbox"
+id="paymentSent"
+required>
+
+I confirm that I have sent the payment to the wallet shown above.
+
+</label>
+
+</div>
+
+<!-- SUBMIT -->
+
+<button
+type="submit"
+class="submit-btn"
+id="submitBtn">
+
+<!-- <span -->
+<!-- id="submitText"> -->
+
+<!-- <i class="fa-solid fa-paper-plane"></i> -->
+
+Submit Deposit
+
+<!-- </span> -->
+
+<span
+id="loadingSpinner"
+style="display:none;">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+Submitting...
+
+</span>
+
+</button>
+
+</form>
+
+</div>
+
+<!-- =====================================
+RIGHT CARD
+===================================== -->
+
+<aside class="deposit-info">
+
+<div class="info-card">
+
+<h3>
+
+<i class="fa-solid fa-circle-info"></i>
+
+Deposit Information
+
+</h3>
+
+<div class="info-item">
+
+<span>
+
+Minimum Deposit
+
+</span>
+
+<strong>
+
+$200,000,000
+
+</strong>
+
+</div>
+
+<div class="info-item">
+
+<span>
+
+Maximum Deposit
+
+</span>
+
+<strong>
+
+Unlimited
+
+</strong>
+
+</div>
+
+<div class="info-item">
+
+<span>
+
+Processing Time
+
+</span>
+
+<strong>
+
+5 - 30 Minutes
+
+</strong>
+
+</div>
+
+<div class="info-item">
+
+<span>
+
+Status
+
+</span>
+
+<strong>
+
+Pending Approval
+
+</strong>
+
+</div>
+
+</div>
+
+<!-- SECURITY -->
+
+<div class="info-card">
+
+<h3>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Security Notice
+
+</h3>
+
+<ul>
+
+<li>
+
+Only send funds to the wallet displayed after selecting your payment method.
+
+</li>
+
+<li>
+
+Always confirm the blockchain network before sending.
+
+</li>
+
+<li>
+
+Upload a clear payment proof to speed up verification.
+
+</li>
+
+<li>
+
+Deposits are reviewed manually by the administrator.
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- SUPPORTED PAYMENT -->
+
+<div class="info-card">
+
+<h3>
+
+<i class="fa-solid fa-coins"></i>
+
+Supported Assets
+
+</h3>
+
+<div class="coin-list">
+
+<div class="coin">
+
+<i class="fa-brands fa-bitcoin"></i>
+
+Bitcoin
+
+</div>
+
+<div class="coin">
+
+<i class="fa-solid fa-dollar-sign"></i>
+
+USDT (TRC20)
+
+</div>
+
+<div class="coin">
+
+<i class="fa-brands fa-ethereum"></i>
+
+Ethereum
+
+</div>
+
+<div class="coin">
+
+<i class="fa-solid fa-bolt"></i>
+
+E- transfer
+
+</div>
+
+</div>
+
+</div>
+
+</aside>
+
+</section>
+
+<footer class="deposit-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+
+<!-- Firebase -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<!-- Deposit -->
+
+<script
+type="module"
+src="js/deposit.js"></script>
+
+</body>
+
+</html>

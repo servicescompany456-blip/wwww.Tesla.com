@@ -1,0 +1,845 @@
+/* ==========================================
+   TELSA INVESTMENT SETTINGS
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+:root{
+
+    --primary:#0D2B52;
+    --secondary:#F4B400;
+
+    --success:#16A34A;
+    --danger:#DC2626;
+
+    --bg:#F5F7FB;
+    --white:#FFFFFF;
+
+    --text:#1F2937;
+    --gray:#6B7280;
+
+    --border:#E5E7EB;
+
+    --shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+/* ==========================================
+MOBILE MENU
+========================================== */
+
+.menu-btn{
+
+    display:none;
+
+    position:fixed;
+
+    top:20px;
+
+    left:20px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:2000;
+
+}
+/* ==========================================
+SIDEBAR
+========================================== */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:270px;
+
+    height:100vh;
+
+    background:var(--primary);
+
+    padding:30px 0;
+
+    overflow-y:auto;
+
+    z-index:1000;
+
+}
+
+.logo{
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    margin-bottom:40px;
+
+}
+
+.logo span{
+
+    color:var(--secondary);
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    margin:10px 20px;
+
+}
+
+.sidebar a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.sidebar li.active a{
+
+    background:var(--secondary);
+
+    color:#000;
+
+}
+/* ==========================================
+MAIN CONTENT
+========================================== */
+
+.main-content{
+
+    margin-left:270px;
+
+    width:calc(100% - 270px);
+
+    min-height:100vh;
+
+    padding:35px;
+
+}
+
+.page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.page-header h1{
+
+    color:var(--primary);
+
+    font-size:36px;
+
+    margin-bottom:8px;
+
+}
+
+.page-header p{
+
+    color:var(--gray);
+
+}
+/* ==========================================
+PROFILE BOX
+========================================== */
+
+.profile-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#fff;
+
+    padding:15px 20px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.profile-box img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid var(--secondary);
+
+}
+
+.profile-box h3{
+
+    color:var(--primary);
+
+    margin-bottom:4px;
+
+}
+
+.profile-box p{
+
+    color:var(--gray);
+
+    font-size:14px;
+
+}
+/* ==========================================
+SETTINGS GRID
+========================================== */
+
+.settings-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+    gap:25px;
+
+}
+/* ==========================================
+SETTINGS CARD
+========================================== */
+
+.settings-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.settings-card h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:var(--primary);
+
+    margin-bottom:25px;
+
+}
+
+.settings-card h2 i{
+
+    color:var(--secondary);
+
+}
+/* ==========================================
+INPUT GROUPS
+========================================== */
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:20px;
+
+}
+
+.input-group label{
+
+    font-weight:600;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+.input-group input,
+
+.input-group select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-family:"Poppins",sans-serif;
+
+    outline:none;
+
+    transition:.3s;
+
+    background:#fff;
+
+}
+
+.input-group input:focus,
+
+.input-group select:focus{
+
+    border-color:var(--secondary);
+
+    box-shadow:0 0 0 3px rgba(244,180,0,.15);
+
+}
+/* ==========================================
+SAVE BUTTONS
+========================================== */
+
+.save-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.save-btn:hover{
+
+    background:var(--secondary);
+
+    color:#000;
+
+    transform:translateY(-2px);
+
+}
+
+.save-btn:active{
+
+    transform:scale(.98);
+
+}
+/* ==========================================
+NOTIFICATION SWITCHES
+========================================== */
+
+.switch-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    padding-bottom:15px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.switch{
+
+    position:relative;
+
+    display:inline-block;
+
+    width:54px;
+
+    height:28px;
+
+}
+
+.switch input{
+
+    opacity:0;
+
+    width:0;
+
+    height:0;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#d1d5db;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.slider:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:22px;
+
+    height:22px;
+
+    left:3px;
+
+    top:3px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+.switch input:checked + .slider{
+
+    background:var(--success);
+
+}
+
+.switch input:checked + .slider:before{
+
+    transform:translateX(26px);
+
+}
+/* ==========================================
+ACCOUNT STATUS
+========================================== */
+
+.status-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.status-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.status-item span{
+
+    color:var(--gray);
+
+}
+
+.status-item strong{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.verified{
+
+    color:var(--success);
+
+}
+/* ==========================================
+ALERT BOX
+========================================== */
+
+#alertBox{
+
+    margin-top:30px;
+
+}
+
+.alert{
+
+    padding:16px 20px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+.alert-success{
+
+    background:#DCFCE7;
+
+    color:#166534;
+
+}
+
+.alert-error{
+
+    background:#FEE2E2;
+
+    color:#991B1B;
+
+}
+/* ==========================================
+FOOTER
+========================================== */
+
+.settings-footer{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:var(--gray);
+
+    padding:20px;
+
+}
+/* ==========================================
+RESPONSIVE - TABLETS
+========================================== */
+
+@media(max-width:1100px){
+
+.settings-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+/* ==========================================
+RESPONSIVE - MOBILE
+========================================== */
+
+@media(max-width:900px){
+
+.menu-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.sidebar{
+
+    position:fixed;
+
+    left:-290px;
+
+    top:0;
+
+    width:270px;
+
+    height:100vh;
+
+    transition:.35s;
+
+}
+
+.sidebar.active{
+
+    left:0;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    width:100%;
+
+    padding:90px 20px 30px;
+
+}
+
+.page-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.profile-box{
+
+    width:100%;
+
+}
+
+}
+/* ==========================================
+SMALL MOBILE
+========================================== */
+
+@media(max-width:600px){
+
+.settings-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.settings-card{
+
+    padding:20px;
+
+}
+
+.status-item{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:8px;
+
+}
+
+.switch-row{
+
+    gap:15px;
+
+}
+
+.page-header h1{
+
+    font-size:28px;
+
+}
+
+.profile-box{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.profile-box img{
+
+    margin-bottom:10px;
+
+}
+
+}
+/* ==========================================
+SCROLLBAR
+========================================== */
+
+.sidebar::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:20px;
+
+}
+
+.sidebar::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--secondary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EEF2F7;
+
+}
+/* ==========================================
+ANIMATIONS
+========================================== */
+
+.settings-card{
+
+    animation:fadeUp .5s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+}
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+/* ==========================================
+HELPERS
+========================================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+button{
+
+    font-family:inherit;
+
+}
+
+a{
+
+    transition:.3s;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}

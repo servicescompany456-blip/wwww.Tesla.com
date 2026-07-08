@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Notifications | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/notifications.css">
+
+</head>
+
+<body>
+
+<!-- =====================================
+SIDEBAR
+===================================== -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Tesla</span> Investment
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="portfolio.html">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Portfolio
+
+</a>
+
+</li>
+
+<li>
+
+<a href="investment-plans.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Investment Plans
+
+</a>
+
+</li>
+
+<li>
+
+<a href="deposit.html">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+Deposit
+
+</a>
+
+</li>
+
+<li>
+
+<a href="withdraw.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+Withdraw
+
+</a>
+
+</li>
+
+<li>
+
+<a href="transactions.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Transactions
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- =====================================
+MAIN CONTENT
+===================================== -->
+
+<main class="main-content">
+
+<header class="page-header">
+
+<div>
+
+<h1>
+
+Notification Center
+
+</h1>
+
+<p>
+
+Stay informed about deposits, withdrawals, investments and account activity.
+
+</p>
+
+</div>
+
+<div class="header-right">
+
+<div class="unread-box">
+
+<i class="fa-solid fa-bell"></i>
+
+<span id="unreadCount">
+
+0
+
+</span>
+
+</div>
+
+<button
+id="markAllRead"
+class="primary-btn">
+
+<i class="fa-solid fa-check-double"></i>
+
+Mark All Read
+
+</button>
+
+</div>
+
+</header>
+<!-- =====================================
+FILTERS
+===================================== -->
+
+<section class="notification-filters">
+
+<button
+class="filter-btn active"
+data-filter="all">
+
+All
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="deposit">
+
+Deposits
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="withdrawal">
+
+Withdrawals
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="investment">
+
+Investments
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="profit">
+
+Profits
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="system">
+
+System
+
+</button>
+
+</section>
+<!-- =====================================
+NOTIFICATION LIST
+===================================== -->
+
+<section
+class="notifications-wrapper">
+
+<div
+id="notificationList"
+class="notification-list">
+
+<div class="loading-card">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+<h3>
+
+Loading Notifications...
+
+</h3>
+
+<p>
+
+Please wait while we retrieve your notifications.
+
+</p>
+
+</div>
+
+</div>
+
+<div
+id="emptyState"
+class="empty-state"
+style="display:none;">
+
+<i class="fa-regular fa-bell-slash"></i>
+
+<h2>
+
+No Notifications
+
+</h2>
+
+<p>
+
+You're all caught up. New account activity will appear here automatically.
+
+</p>
+
+</div>
+
+</section>
+<!-- =====================================
+DELETE ALL MODAL
+===================================== -->
+
+<div
+class="modal"
+id="deleteModal">
+
+<div class="modal-content">
+
+<div class="modal-icon">
+
+<i class="fa-solid fa-trash-can"></i>
+
+</div>
+
+<h2>
+
+Delete All Notifications?
+
+</h2>
+
+<p>
+
+This action will permanently remove all notifications from your account.
+
+</p>
+
+<div class="modal-actions">
+
+<button
+id="cancelDelete"
+class="cancel-btn">
+
+Cancel
+
+</button>
+
+<button
+id="confirmDelete"
+class="delete-btn">
+
+Delete All
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+<!-- =====================================
+FOOTER
+===================================== -->
+
+<footer class="page-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+<!-- =====================================
+FIREBASE
+===================================== -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<!-- =====================================
+NOTIFICATIONS
+===================================== -->
+
+<script
+type="module"
+src="js/notifications.js"></script>
+
+</body>
+
+</html>

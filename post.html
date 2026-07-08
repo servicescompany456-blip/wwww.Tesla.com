@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Post • Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/post.css">
+
+</head>
+
+<body>
+
+<div class="post-container">
+
+<!-- =====================================
+POST HEADER
+===================================== -->
+
+<header class="post-header">
+
+<div class="header-left">
+
+<a href="instagram.html"
+class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+<img
+src="images/profile.jpg"
+alt="Tesla Investment"
+class="profile-image">
+
+<div class="profile-info">
+
+<h3>
+
+teslainvestment
+
+<i class="fa-solid fa-circle-check verified"></i>
+
+</h3>
+
+<p>
+
+Investment Company
+
+</p>
+
+</div>
+
+</div>
+
+<div class="header-right">
+
+<button class="more-btn">
+
+<i class="fa-solid fa-ellipsis"></i>
+
+</button>
+
+</div>
+
+</header>
+<!-- =====================================
+POST IMAGE
+===================================== -->
+
+<section class="post-image-section">
+
+<img
+id="postImage"
+src=""
+alt="Instagram Post">
+
+<div
+id="likeAnimation"
+class="like-animation">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+</section>
+<!-- =====================================
+POST CONTENT
+===================================== -->
+
+<section class="post-content">
+    <!-- =====================================
+POST ACTIONS
+===================================== -->
+
+<div class="post-actions">
+
+<div class="left-actions">
+
+<button id="likeBtn">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+<button id="commentBtn">
+
+<i class="fa-regular fa-comment"></i>
+
+</button>
+
+<button id="shareBtn">
+
+<i class="fa-regular fa-paper-plane"></i>
+
+</button>
+
+</div>
+
+<div class="right-actions">
+
+<button id="saveBtn">
+
+<i class="fa-regular fa-bookmark"></i>
+
+</button>
+
+</div>
+
+</div>
+<!-- =====================================
+POST DETAILS
+===================================== -->
+
+<div class="post-details">
+
+<h4 id="likeCount">
+
+2,845 likes
+
+</h4>
+
+<p class="caption">
+
+<strong>
+
+teslainvestment
+
+</strong>
+
+<span id="postCaption">
+
+Welcome to Tesla Investment 🚀
+Build your future with smart investments.
+
+</span>
+
+</p>
+
+<p class="post-time">
+
+2 HOURS AGO
+
+</p>
+
+</div>
+<!-- =====================================
+COMMENTS
+===================================== -->
+
+<section
+class="comments-section"
+id="commentsSection">
+
+<div class="comment">
+
+<strong>
+
+john_smith
+
+</strong>
+
+Amazing investment platform 🔥
+
+</div>
+
+<div class="comment">
+
+<strong>
+
+lisa_williams
+
+</strong>
+
+Looks great 👏
+
+</div>
+
+<div class="comment">
+
+<strong>
+
+crypto_king
+
+</strong>
+
+Can't wait to invest ❤️
+
+</div>
+
+</section>
+<!-- =====================================
+ADD COMMENT
+===================================== -->
+
+<form
+id="commentForm"
+class="comment-form">
+
+<button
+type="button"
+class="emoji-btn">
+
+<i class="fa-regular fa-face-smile"></i>
+
+</button>
+
+<input
+type="text"
+id="commentInput"
+placeholder="Add a comment..."
+maxlength="300">
+
+<button
+type="submit"
+id="postComment">
+
+Post
+
+</button>
+
+</form>
+</section>
+<!-- =====================================
+RELATED POSTS
+===================================== -->
+
+<section class="related-posts">
+
+<h3>
+
+More Posts
+
+</h3>
+
+<div class="related-grid">
+
+<img
+src="images/post1.jpg"
+class="related-image"
+data-post="0"
+alt="Post 1">
+
+<img
+src="images/post2.jpg"
+class="related-image"
+data-post="1"
+alt="Post 2">
+
+<img
+src="images/post3.jpg"
+class="related-image"
+data-post="2"
+alt="Post 3">
+
+<img
+src="images/post4.jpg"
+class="related-image"
+data-post="3"
+alt="Post 4">
+
+<img
+src="images/post5.jpg"
+class="related-image"
+data-post="4"
+alt="Post 5">
+
+<img
+src="images/post6.jpg"
+class="related-image"
+data-post="5"
+alt="Post 6">
+
+</div>
+
+</section>
+<!-- =====================================
+TOAST NOTIFICATION
+===================================== -->
+
+<div
+id="toast"
+class="toast">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<span id="toastMessage">
+
+Done
+
+</span>
+
+</div>
+<!-- =====================================
+LOADING SCREEN
+===================================== -->
+
+<div
+id="loadingScreen"
+class="loading-screen">
+
+<div class="loader">
+
+<div class="spinner"></div>
+
+<p>
+
+Loading post...
+
+</p>
+
+</div>
+
+</div>
+<!-- =====================================
+SHARE MODAL
+===================================== -->
+
+<div
+id="shareModal"
+class="share-modal">
+
+<div class="share-box">
+
+<h3>
+
+Share Post
+
+</h3>
+
+<div class="share-buttons">
+
+<button id="copyLink">
+
+<i class="fa-solid fa-link"></i>
+
+Copy Link
+
+</button>
+
+<button id="shareInstagram">
+
+<i class="fa-brands fa-instagram"></i>
+
+Instagram
+
+</button>
+
+<button id="shareWhatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+WhatsApp
+
+</button>
+
+</div>
+
+<button
+id="closeShare">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+<!-- =====================================
+JAVASCRIPT
+===================================== -->
+
+<script
+src="js/post.js"></script>
+
+</body>
+</html>
+
+
+

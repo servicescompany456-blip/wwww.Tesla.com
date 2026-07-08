@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Tesla Investment</title>
+
+    <meta name="description"
+        content="Create your Telsa Investment account to access your investment dashboard.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/auth.css">
+
+</head>
+
+<body>
+
+    <!-- ===========================
+         HEADER
+    ============================ -->
+
+    <header class="auth-header">
+
+        <a href="index.html" class="logo">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <span>Tesla</span> Investment
+
+        </a>
+
+        <a href="index.html" class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Home
+
+        </a>
+
+    </header>
+
+    <!-- ===========================
+         REGISTER SECTION
+    ============================ -->
+
+    <section class="auth-section">
+
+        <div class="auth-container">
+
+            <!-- LEFT SIDE -->
+
+            <div class="auth-left">
+
+                <span class="tag">
+
+                    Welcome to Tesla Investment
+
+                </span>
+
+                <h1>
+
+                    Start Building Your Financial Future
+
+                </h1>
+
+                <p>
+
+                    Create your secure account to access your investment dashboard,
+                    monitor your portfolio, and manage your investments.
+
+                </p>
+
+                <div class="feature-list">
+
+                    <div>
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        Secure Authentication
+
+                    </div>
+
+                    <div>
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        Portfolio Dashboard
+
+                    </div>
+
+                    <div>
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                        Wallet Management
+
+                    </div>
+
+                    <div>
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        Protected Account
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="auth-right">
+
+                <div class="form-card">
+
+                    <h2>Create Account</h2>
+
+                    <p>
+
+                        Fill in the details below to create your account.
+
+                    </p>
+
+                    <!-- ALERT -->
+
+                    <div id="alertBox"></div>
+
+                    <!-- REGISTER FORM -->
+
+                    <form id="registerForm">
+
+                        <!-- FULL NAME -->
+
+                        <div class="input-group">
+
+                            <label>
+
+                                Full Name
+
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    placeholder="John Doe"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <!-- EMAIL -->
+
+                        <div class="input-group">
+
+                            <label>
+
+                                Email Address
+
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="example@gmail.com"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <!-- PHONE -->
+
+                        <div class="input-group">
+
+                            <label>
+
+                                Phone Number
+
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder="+1xxxxxxxxxx"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <!-- COUNTRY -->
+
+                        <div class="input-group">
+
+                            <label>
+
+                                Country
+
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-earth-africa"></i>
+
+                                <input
+                                    type="text"
+                                    id="country"
+                                    placeholder="United states"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <!-- PASSWORD -->
+
+                        <div class="input-group">
+
+                            <label>
+
+                                Password
+
+                            </label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Create Password"
+                                    required>
+
+                                <button
+                                    type="button"
+                                    id="togglePassword"
+                                    class="toggle-password">
+
+                                    <i class="fa-solid fa-eye"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- PASSWORD STRENGTH -->
+
+                        <div class="password-strength">
+
+                            <div class="strength-bar">
+
+                                <span id="strengthFill"></span>
+
+                            </div>
+
+                            <small id="strengthText">
+
+                                Password Strength
+
+                            </small>
+
+                        </div>
+                        <!-- CONFIRM PASSWORD -->
+
+<div class="input-group">
+
+    <label>
+
+        Confirm Password
+
+    </label>
+
+    <div class="input-box">
+
+        <i class="fa-solid fa-lock"></i>
+
+        <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            required>
+
+        <button
+            type="button"
+            id="toggleConfirmPassword"
+            class="toggle-password">
+
+            <i class="fa-solid fa-eye"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- REFERRAL -->
+
+<div class="input-group">
+
+    <label>
+
+        Referral Code (Optional)
+
+    </label>
+
+    <div class="input-box">
+
+        <i class="fa-solid fa-users"></i>
+
+        <input
+            type="text"
+            id="referral"
+            placeholder="Referral Code">
+
+    </div>
+
+</div>
+
+<!-- TERMS -->
+
+<div class="terms">
+
+    <label>
+
+        <input
+            type="checkbox"
+            id="terms"
+            required>
+
+        I agree to the
+
+        <a href="terms.html">
+
+            Terms & Conditions
+
+        </a>
+
+        and
+
+        <a href="privacy.html">
+
+            Privacy Policy
+
+        </a>
+
+    </label>
+
+</div>
+
+<!-- REGISTER BUTTON -->
+
+<button
+    type="submit"
+    class="register-btn"
+    id="registerBtn">
+
+    <span id="registerText">
+
+        Create Account
+
+    </span>
+
+    <span
+        id="loadingSpinner"
+        style="display:none;">
+
+        <i class="fa-solid fa-spinner fa-spin"></i>
+
+        Creating Account...
+
+    </span>
+
+</button>
+
+<!-- LOGIN LINK -->
+
+<div class="login-link">
+
+    Already have an account?
+
+    <a href="login.html">
+
+        Login Here
+
+    </a>
+
+</div>
+
+<!-- SECURITY NOTICE -->
+
+<div class="security-box">
+
+    <i class="fa-solid fa-shield-halved"></i>
+
+    <div>
+
+        <h4>Your Security Matters</h4>
+
+        <p>
+
+            After registration, Tesla will send an email verification link. Please verify your email before accessing your investment dashboard.
+
+        </p>
+
+    </div>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="auth-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+<!-- Firebase -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<script
+type="module"
+src="js/auth.js"></script>
+
+</body>
+
+</html>

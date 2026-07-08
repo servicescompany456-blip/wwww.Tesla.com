@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Support Chat | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/message.css">
+
+</head>
+
+<body>
+
+<div class="chat-container">
+
+<!-- =====================================
+CHAT HEADER
+===================================== -->
+
+<header class="chat-header">
+
+<div class="header-left">
+
+<a href="instagram.html"
+class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+<img
+src="images/support.png"
+alt="Support"
+class="support-avatar">
+
+<div>
+
+<h2>
+
+Tesla Investment Support
+
+</h2>
+
+<p class="online-status">
+
+<i class="fa-solid fa-circle"></i>
+
+Online
+
+</p>
+
+</div>
+
+</div>
+
+<div class="header-right">
+
+<button
+id="refreshChat"
+title="Refresh">
+
+<i class="fa-solid fa-rotate-right"></i>
+
+</button>
+
+<button
+id="chatInfo"
+title="Chat Information">
+
+<i class="fa-solid fa-circle-info"></i>
+
+</button>
+
+</div>
+
+</header>
+<!-- =====================================
+WELCOME MESSAGE
+===================================== -->
+
+<section class="welcome-box">
+
+<div class="welcome-avatar">
+
+<img
+src="images/support.png"
+alt="Support">
+
+</div>
+
+<h2>
+
+Welcome to Tesla Investment Support
+
+</h2>
+
+<p>
+
+Hello 👋
+
+Need help with your account, deposits, withdrawals, verification, or investments?
+
+Send us a message below and our support team will respond as soon as possible.
+
+</p>
+
+<div class="support-tags">
+
+<span>💳 Deposits</span>
+
+<span>💸 Withdrawals</span>
+
+<span>🛡 Account Security</span>
+
+<span>📈 Investments</span>
+
+</div>
+
+</section>
+<!-- =====================================
+CHAT DATE
+===================================== -->
+
+<div class="chat-date">
+
+Today
+
+</div>
+
+<!-- =====================================
+MESSAGES CONTAINER
+===================================== -->
+
+<section
+class="chat-messages"
+id="chatMessages">
+
+<!-- Messages from Firebase will appear here -->
+
+</section>
+<!-- =====================================
+TYPING INDICATOR
+===================================== -->
+
+<div
+class="typing-indicator"
+id="typingIndicator"
+style="display:none;">
+
+<div class="typing-avatar">
+
+<img
+src="images/support.png"
+alt="Support">
+
+</div>
+
+<div class="typing-bubble">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+<p>
+
+Tesla Investment is typing...
+
+</p>
+
+</div>
+<!-- =====================================
+MESSAGE INPUT
+===================================== -->
+
+<footer class="chat-input-area">
+
+<form
+id="messageForm"
+autocomplete="off">
+
+<div class="input-wrapper">
+
+<button
+type="button"
+class="emoji-btn"
+title="Emoji">
+
+<i class="fa-regular fa-face-smile"></i>
+
+</button>
+
+<input
+type="text"
+id="messageInput"
+placeholder="Type your message..."
+maxlength="500"
+required>
+
+<button
+type="button"
+class="attach-btn"
+title="Attachment">
+
+<i class="fa-solid fa-paperclip"></i>
+
+</button>
+
+</div>
+<div class="input-footer">
+
+<div class="character-count">
+
+<span id="charCount">
+
+0
+
+</span>
+
+/
+
+500
+
+</div>
+
+<button
+type="submit"
+id="sendBtn"
+class="send-btn">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+<span>
+
+Send
+
+</span>
+
+</button>
+
+</div>
+
+</form>
+
+</footer>
+<!-- =====================================
+CHAT STATUS
+===================================== -->
+
+<div
+class="chat-status"
+id="chatStatus">
+
+<i class="fa-solid fa-circle-check"></i>
+
+Secure encrypted conversation
+
+</div>
+<!-- =====================================
+LOADING OVERLAY
+===================================== -->
+
+<div
+id="loadingOverlay"
+class="loading-overlay"
+style="display:none;">
+
+<div class="loader">
+
+<div class="spinner"></div>
+
+<p>
+
+Sending message...
+
+</p>
+
+</div>
+
+</div>
+
+<!-- =====================================
+SUCCESS TOAST
+===================================== -->
+
+<div
+id="successToast"
+class="toast success-toast">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<span>
+
+Message sent successfully.
+
+</span>
+
+</div>
+
+<!-- =====================================
+ERROR TOAST
+===================================== -->
+
+<div
+id="errorToast"
+class="toast error-toast">
+
+<i class="fa-solid fa-circle-xmark"></i>
+
+<span>
+
+Unable to send message.
+
+</span>
+
+</div>
+<!-- =====================================
+EMOJI PICKER (Coming Soon)
+===================================== -->
+
+<div
+id="emojiPicker"
+class="emoji-picker"
+style="display:none;">
+
+<span>😀</span>
+<span>😁</span>
+<span>😂</span>
+<span>😊</span>
+<span>😍</span>
+<span>😎</span>
+<span>👍</span>
+<span>👏</span>
+<span>❤️</span>
+<span>🔥</span>
+<span>🎉</span>
+<span>🙏</span>
+
+</div>
+<!-- =====================================
+HIDDEN FILE INPUT
+===================================== -->
+
+<input
+type="file"
+id="attachmentInput"
+accept="image/*,.pdf"
+hidden>
+<!-- =====================================
+JAVASCRIPT
+===================================== -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<script
+type="module"
+src="js/message.js"></script>
+
+</body>
+</html>

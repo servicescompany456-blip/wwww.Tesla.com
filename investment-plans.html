@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Investment Plans | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/investment-plans.css">
+
+</head>
+
+<body>
+
+<!-- =====================================
+SIDEBAR
+===================================== -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Tesla</span> Investment
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="investment-plans.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Investment Plans
+
+</a>
+
+</li>
+
+<li>
+
+<a href="portfolio.html">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Portfolio
+
+</a>
+
+</li>
+
+<li>
+
+<a href="deposit.html">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+Deposit
+
+</a>
+
+</li>
+
+<li>
+
+<a href="withdraw.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+Withdraw
+
+</a>
+
+</li>
+
+<li>
+
+<a href="transactions.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Transactions
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- =====================================
+MAIN CONTENT
+===================================== -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2>
+
+Investment Plans
+
+</h2>
+
+<p>
+
+Choose an investment plan that matches your financial goals.
+
+</p>
+
+</div>
+
+<div class="account-summary">
+
+<p>
+
+Available Balance
+
+</p>
+
+<h2 id="availableBalance">
+
+$0.00
+
+</h2>
+
+</div>
+
+</header>
+<!-- =====================================
+PLAN INTRO
+===================================== -->
+
+<section class="plans-header">
+
+<h2>
+
+Grow Your Wealth With Confidence
+
+</h2>
+
+<p>
+
+Select from our professionally managed investment plans. Each plan offers competitive returns and secure fund management.
+
+</p>
+
+</section>
+
+<!-- =====================================
+PLANS GRID
+===================================== -->
+
+<section
+class="plans-grid"
+id="plansGrid">
+<!-- =====================================
+STARTER PLAN
+===================================== -->
+
+<div class="plan-card starter">
+
+<div class="plan-badge">
+
+Starter
+
+</div>
+
+<h2>
+
+Starter Plan
+
+</h2>
+
+<h1>
+
+75%
+
+</h1>
+
+<p>
+
+Return on Investment
+
+</p>
+
+<ul>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Minimum: $15,000
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Maximum: $15
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Duration: 7 Days
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Daily Monitoring
+
+</li>
+
+</ul>
+
+<button
+class="invest-btn"
+
+data-plan="Starter"
+
+data-min="15000"
+
+data-max="15000"
+
+data-roi="75"
+
+data-duration="7">
+
+Invest Now
+
+</button>
+
+</div>
+<!-- =====================================
+SILVER PLAN
+===================================== -->
+
+<div class="plan-card silver">
+
+<div class="plan-badge">
+
+Silver
+
+</div>
+
+<h2>
+
+Silver Plan
+
+</h2>
+
+<h1>
+
+150%
+
+</h1>
+
+<p>
+
+Return on Investment
+
+</p>
+
+<ul>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Minimum: $25,000
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Maximum: $25
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Duration: 15 Days
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Priority Support
+
+</li>
+
+</ul>
+
+<button
+class="invest-btn"
+
+data-plan="Silver"
+
+data-min="25000"
+
+data-max="25000"
+
+data-roi="150"
+
+data-duration="15">
+
+Invest Now
+
+</button>
+
+</div>
+
+<!-- =====================================
+GOLD PLAN
+===================================== -->
+
+<div class="plan-card gold">
+
+<div class="plan-badge">
+
+Gold
+
+</div>
+
+<h2>
+
+Gold Plan
+
+</h2>
+
+<h1>
+
+180%
+
+</h1>
+
+<p>
+
+Return on Investment
+
+</p>
+
+<ul>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Minimum: $35,000
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Maximum: $35
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Duration: 30 Days
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Premium Support
+
+</li>
+
+</ul>
+
+<button
+class="invest-btn"
+
+data-plan="Gold"
+
+data-min="35000"
+
+data-max="35000"
+
+data-roi="180"
+
+data-duration="30">
+
+Invest Now
+
+
+
+</div>
+<!-- =====================================
+DIAMOND PLAN
+===================================== -->
+
+<div class="plan-card diamond">
+
+<div class="plan-badge">
+
+Diamond
+
+</div>
+
+<h2>
+
+Diamond Plan
+
+</h2>
+
+<h1>
+
+250%
+
+</h1>
+
+<p>
+
+Return on Investment
+
+</p>
+
+<ul>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Minimum: $50,000
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Maximum: $50
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Duration: 45 Days
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Dedicated Manager
+
+</li>
+
+</ul>
+
+<button
+class="invest-btn"
+
+data-plan="Diamond"
+
+data-min="50000"
+
+data-max="50000"
+
+data-roi="250"
+
+data-duration="45">
+
+Invest Now
+
+</button>
+
+</div>
+
+<!-- =====================================
+VIP PLAN
+===================================== -->
+
+<div class="plan-card vip">
+
+<div class="plan-badge">
+
+VIP
+
+</div>
+
+<h2>
+
+VIP Plan
+
+</h2>
+
+<h1>
+
+350%
+
+</h1>
+
+<p>
+
+Return on Investment
+
+</p>
+
+<ul>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Minimum: $150,000
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Maximum: Unlimited
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Duration: 60 Days
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+VIP Account Manager
+
+</li>
+
+</ul>
+
+<button
+class="invest-btn"
+
+data-plan="VIP"
+
+data-min="150000"
+
+data-max="150000"
+
+data-roi="350"
+
+data-duration="60">
+
+Invest Now
+
+</button>
+
+</div>
+
+</section>
+<!-- =====================================
+WHY CHOOSE US
+===================================== -->
+
+<section class="benefits">
+
+<h2>
+
+Why Invest With Tesla Investment?
+
+</h2>
+
+<div class="benefits-grid">
+
+<div class="benefit-card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>
+
+Secure Platform
+
+</h3>
+
+<p>
+
+Your investment portfolio is protected with advanced account security.
+
+</p>
+
+</div>
+
+<div class="benefit-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>
+
+Professional Growth
+
+</h3>
+
+<p>
+
+Track your investment performance and portfolio in real time.
+
+</p>
+
+</div>
+
+<div class="benefit-card">
+
+<i class="fa-solid fa-headset"></i>
+
+<h3>
+
+24/7 Support
+
+</h3>
+
+<p>
+
+Our support team is available whenever you need assistance.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================
+FOOTER
+===================================== -->
+
+<footer class="plans-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+
+<!-- =====================================
+FIREBASE
+===================================== -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<!-- =====================================
+INVESTMENT PLANS
+===================================== -->
+
+<script
+type="module"
+src="js/investment-plans.js"></script>
+
+</body>
+
+</html>

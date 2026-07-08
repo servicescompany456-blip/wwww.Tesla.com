@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Withdraw Funds | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/withdraw.css">
+
+</head>
+
+<body>
+
+<!-- =====================================
+SIDEBAR
+===================================== -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Tesla</span>
+
+Investment
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="portfolio.html">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Portfolio
+
+</a>
+
+</li>
+
+<li>
+
+<a href="investment-plans.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Investment Plans
+
+</a>
+
+</li>
+
+<li>
+
+<a href="deposit.html">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+Deposit
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="withdraw.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+Withdraw
+
+</a>
+
+</li>
+
+<li>
+
+<a href="transactions.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Transactions
+
+</a>
+
+</li>
+
+<li>
+
+<a href="notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- =====================================
+MAIN CONTENT
+===================================== -->
+
+<main class="main-content">
+
+<header class="page-header">
+
+<h1>
+
+Withdraw Funds
+
+</h1>
+
+<p>
+
+Request a withdrawal securely from your investment wallet.
+
+</p>
+
+</header>
+<!-- =====================================
+BALANCE CARDS
+===================================== -->
+
+<section class="balance-grid">
+
+<div class="balance-card">
+
+<div class="icon blue">
+
+<i class="fa-solid fa-wallet"></i>
+
+</div>
+
+<div>
+
+<h4>
+
+Available Balance
+
+</h4>
+
+<h2 id="availableBalance">
+
+$0.00
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="balance-card">
+
+<div class="icon orange">
+
+<i class="fa-solid fa-money-check-dollar"></i>
+
+</div>
+
+<div>
+
+<h4>
+
+Withdrawal Fee
+
+</h4>
+
+<h2>
+
+$2,500
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="balance-card">
+
+<div class="icon green">
+
+<i class="fa-solid fa-circle-dollar-to-slot"></i>
+
+</div>
+
+<div>
+
+<h4>
+
+Net Amount
+
+</h4>
+
+<h2 id="netAmount">
+
+$0.00
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+<!-- =====================================
+NOTICE
+===================================== -->
+
+<section class="notice-box">
+
+<i class="fa-solid fa-circle-info"></i>
+
+<div>
+
+<h3>
+
+Withdrawal Notice
+
+</h3>
+
+<p>
+
+A one-time <strong>$2,500 withdrawal processing fee</strong> must be completed before your withdrawal request can be reviewed.
+
+After payment verification, your request will be processed by our finance department.
+
+</p>
+
+</div>
+
+</section>
+<!-- =====================================
+WITHDRAW FORM
+===================================== -->
+
+<section class="withdraw-card">
+
+<form id="withdrawForm">
+
+<div class="form-group">
+
+<label>
+
+Withdrawal Amount
+
+</label>
+
+<input
+type="number"
+id="amount"
+placeholder="Enter withdrawal amount"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Receiving Wallet Address
+
+</label>
+
+<input
+type="text"
+id="walletAddress"
+placeholder="Enter your wallet address"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Payment Network
+
+</label>
+
+<select
+id="paymentMethod"
+required>
+
+<option value="">
+
+Select Network
+
+</option>
+
+<option value="bitcoin">
+
+Bitcoin
+
+</option>
+
+<option value="usdt">
+
+USDT (TRC20)
+
+</option>
+
+<option value="ethereum">
+
+Ethereum
+
+</option>
+
+<option value="Etransfer">
+
+E transfer
+
+</option>
+
+</select>
+
+</div>
+<!-- =====================================
+PAYMENT WALLET CARD
+===================================== -->
+
+<section
+class="wallet-card"
+id="walletCard"
+style="display:none;">
+
+<div class="wallet-header">
+
+<h3 id="walletTitle">
+
+Payment Wallet
+
+</h3>
+
+<span id="walletNetwork">
+
+Network
+
+</span>
+
+</div>
+
+<div class="wallet-address-box">
+
+<input
+type="text"
+id="walletAddressDisplay"
+readonly>
+
+<button
+type="button"
+id="copyAddress">
+
+<i class="fa-solid fa-copy"></i>
+
+Copy
+
+</button>
+
+</div>
+
+<p class="wallet-note">
+
+Send the <strong>$2,500 Withdrawal Processing Fee</strong> to the wallet address above before submitting your withdrawal request.
+
+</p>
+
+</section>
+<!-- =====================================
+UPLOAD PAYMENT PROOF
+===================================== -->
+
+<section class="upload-card">
+
+<h3>
+
+Upload Payment Proof
+
+</h3>
+
+<p>
+
+Upload a screenshot of your completed payment.
+
+</p>
+
+<input
+type="file"
+id="paymentProof"
+accept="image/*">
+
+<div
+id="proofPreviewContainer"
+style="display:none;">
+
+<img
+id="proofPreview"
+src=""
+alt="Payment Proof Preview">
+
+</div>
+
+</section>
+<!-- =====================================
+CONFIRMATION
+===================================== -->
+
+<section class="confirmation-card">
+
+<label class="checkbox">
+
+<input
+type="checkbox"
+id="paymentSent">
+
+<span>
+
+I confirm that I have paid the
+<strong>$2,500 withdrawal processing fee.</strong>
+
+</span>
+
+</label>
+
+<div id="alertBox"></div>
+
+<button
+type="submit"
+id="submitBtn">
+
+<!-- <span id="submitText"> -->
+
+Submit Withdrawal
+
+<!-- </span> -->
+
+<span
+id="loadingSpinner"
+style="display:none;">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+Processing...
+
+</span>
+
+</button>
+
+</section>
+
+</form>
+
+</section>
+<!-- =====================================
+IMPORTANT INFORMATION
+===================================== -->
+
+<section class="important-card">
+
+<div class="important-icon">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Important Information
+
+</h3>
+
+<ul>
+
+<li>
+
+Withdrawal requests are reviewed within 24 hours.
+
+</li>
+
+<li>
+
+Your request will remain <strong>Pending</strong> until payment verification is complete.
+
+</li>
+
+<li>
+
+Once approved, the withdrawal will automatically appear in your transaction history.
+
+</li>
+
+<li>
+
+You will receive a notification when the status changes.
+
+</li>
+
+<li>
+
+Please make sure your receiving wallet address is correct.
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+<!-- =====================================
+FOOTER
+===================================== -->
+
+<footer class="page-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+
+<!-- =====================================
+FIREBASE
+===================================== -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<!-- =====================================
+WITHDRAW
+===================================== -->
+
+<script
+type="module"
+src="js/withdraw.js"></script>
+
+</body>
+
+</html>

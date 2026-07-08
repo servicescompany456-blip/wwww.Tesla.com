@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/portfolio.css">
+
+</head>
+
+<body>
+
+<!-- =====================================
+SIDEBAR
+===================================== -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Tesla</span> Investment
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="portfolio.html">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Portfolio
+
+</a>
+
+</li>
+
+<li>
+
+<a href="investment-plans.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Investment Plans
+
+</a>
+
+</li>
+
+<li>
+
+<a href="deposit.html">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+Deposit
+
+</a>
+
+</li>
+
+<li>
+
+<a href="withdraw.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+Withdraw
+
+</a>
+
+</li>
+
+<li>
+
+<a href="transactions.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Transactions
+
+</a>
+
+</li>
+
+<li>
+
+<a href="notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- =====================================
+MAIN CONTENT
+===================================== -->
+
+<main class="main-content">
+
+<header class="page-header">
+
+<h1>
+
+Investment Portfolio
+
+</h1>
+
+<p>
+
+Track all your active and completed investments.
+
+</p>
+
+</header>
+<!-- =====================================
+SUMMARY CARDS
+===================================== -->
+
+<section class="summary-grid">
+
+<div class="summary-card">
+
+<div class="summary-icon blue">
+
+<i class="fa-solid fa-wallet"></i>
+
+</div>
+
+<div>
+
+<h4>
+
+Portfolio Balance
+
+</h4>
+
+<h2 id="portfolioBalance">
+
+$0.00
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<div class="summary-icon green">
+
+<i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+<div>
+
+<h4>
+
+Expected Profit
+
+</h4>
+
+<h2 id="expectedProfitTotal">
+
+$0.00
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<div class="summary-icon orange">
+
+<i class="fa-solid fa-sack-dollar"></i>
+
+</div>
+
+<div>
+
+<h4>
+
+Expected Return
+
+</h4>
+
+<h2 id="expectedReturnTotal">
+
+$0.00
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<div class="summary-icon purple">
+
+<i class="fa-solid fa-layer-group"></i>
+
+</div>
+
+<div>
+
+<h4>
+
+Active Investments
+
+</h4>
+
+<h2 id="activeInvestments">
+
+0
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+<!-- =====================================
+FILTERS
+===================================== -->
+
+<section class="filter-bar">
+
+<button
+class="filter-btn active"
+data-filter="all">
+
+All
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="Running">
+
+Running
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="Completed">
+
+Completed
+
+</button>
+
+</section>
+<!-- =====================================
+INVESTMENT LIST
+===================================== -->
+
+<section
+id="portfolioList"
+class="portfolio-list">
+
+<div class="loading-card">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+<h3>
+
+Loading Portfolio...
+
+</h3>
+
+<p>
+
+Please wait while we load your investments.
+
+</p>
+
+</div>
+
+</section>
+<!-- =====================================
+FOOTER
+===================================== -->
+
+<footer class="page-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<script
+type="module"
+src="js/portfolio.js"></script>
+
+</body>
+
+</html>

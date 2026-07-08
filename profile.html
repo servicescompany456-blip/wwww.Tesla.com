@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Tesla Investment</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="css/profile.css">
+
+</head>
+
+<body>
+
+<!-- ==========================
+SIDEBAR
+========================== -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <span>Tesla</span> Investment
+
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="profile.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>My Profile</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="transactions.html">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>Transactions</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#" id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ==========================
+MAIN CONTENT
+========================== -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+    <div>
+
+        <h2>My Profile</h2>
+
+        <p>Manage your account information and security.</p>
+
+    </div>
+
+</header>
+
+<!-- ==========================
+PROFILE GRID
+========================== -->
+
+<section class="profile-grid">
+
+<!-- LEFT -->
+
+<div class="profile-card">
+
+    <div class="profile-image-wrapper">
+
+        <img
+            id="profileImage"
+            src="images/avatar.png"
+            alt="Profile Picture">
+
+        <label
+            class="camera-btn"
+            for="profileUpload">
+
+            <i class="fa-solid fa-camera"></i>
+
+        </label>
+
+        <input
+            type="file"
+            id="profileUpload"
+            accept=".jpg,.jpeg,.png,.webp"
+            hidden>
+
+    </div>
+
+    <h2 id="profileName">
+
+        Loading...
+
+    </h2>
+
+    <p id="profileEmail">
+
+        Loading...
+
+    </p>
+
+    <div class="profile-status">
+
+        <span id="verifyBadge">
+
+            Loading...
+
+        </span>
+
+    </div>
+
+    <div class="profile-info">
+
+        <div>
+
+            <small>Member Since</small>
+
+            <strong id="joinedDate">
+
+                Loading...
+
+            </strong>
+
+        </div>
+
+        <div>
+
+            <small>User ID</small>
+
+            <strong id="userId">
+
+                Loading...
+
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="profile-form-card">
+
+<h2>
+
+Personal Information
+
+</h2>
+
+<div id="alertBox"></div>
+
+<form id="profileForm">
+
+<div class="form-row">
+
+<div class="input-group">
+
+<label>
+
+Full Name
+
+</label>
+
+<input
+type="text"
+id="fullName"
+required>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Email Address
+
+</label>
+
+<input
+type="email"
+id="email"
+readonly>
+
+</div>
+
+</div>
+
+<div class="form-row">
+
+<div class="input-group">
+
+<label>
+
+Phone Number
+
+</label>
+
+<input
+type="text"
+id="phone">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Country
+
+</label>
+
+<input
+type="text"
+id="country">
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<h2>
+
+Profile Photo
+
+</h2>
+
+<p class="section-text">
+
+Upload a JPG, PNG or WebP image up to 2 MB.
+
+</p>
+
+<div class="upload-box">
+
+    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+    <p>
+
+        Click the camera icon or choose an image to upload.
+
+    </p>
+
+    <div id="uploadProgress"
+         class="progress-bar">
+
+        <div id="progressFill"></div>
+
+    </div>
+
+</div>
+<!-- ======================================
+SECURITY
+======================================= -->
+
+<hr class="divider">
+
+<h2>
+
+Security
+
+</h2>
+
+<p class="section-text">
+
+Change your password to keep your account secure.
+
+</p>
+
+<div class="form-row">
+
+<div class="input-group">
+
+<label>
+
+New Password
+
+</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="newPassword"
+placeholder="Enter new password">
+
+<button
+type="button"
+id="togglePassword">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Confirm Password
+
+</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm new password">
+
+<button
+type="button"
+id="toggleConfirmPassword">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PASSWORD STRENGTH -->
+
+<div class="strength-box">
+
+<div class="strength-bar">
+
+<div id="strengthFill"></div>
+
+</div>
+
+<p id="strengthText">
+
+Password Strength
+
+</p>
+
+</div>
+
+<!-- SAVE -->
+
+<button
+type="submit"
+class="save-btn"
+id="saveBtn">
+
+<span id="saveText">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Changes
+
+</span>
+
+<span
+id="loadingSpinner"
+style="display:none;">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+Saving...
+
+</span>
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="profile-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+
+<!-- FIREBASE -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<!-- PROFILE -->
+
+<script
+type="module"
+src="js/profile.js"></script>
+
+</body>
+
+</html>

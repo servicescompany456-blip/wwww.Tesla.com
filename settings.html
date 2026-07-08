@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Settings | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/settings.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+MOBILE MENU
+========================================== -->
+
+<button
+class="menu-btn"
+id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<!-- ==========================================
+SIDEBAR
+========================================== -->
+
+<aside
+class="sidebar"
+id="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Tesla</span> Investment
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="portfolio.html">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Portfolio
+
+</a>
+
+</li>
+
+<li>
+
+<a href="investment-plans.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Investment Plans
+
+</a>
+
+</li>
+
+<li>
+
+<a href="deposit.html">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+Deposit
+
+</a>
+
+</li>
+
+<li>
+
+<a href="withdraw.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+Withdraw
+
+</a>
+
+</li>
+
+<li>
+
+<a href="transactions.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Transactions
+
+</a>
+
+</li>
+
+<li>
+
+<a href="notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="support.html">
+
+<i class="fa-solid fa-headset"></i>
+
+Support
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ==========================================
+MAIN CONTENT
+========================================== -->
+
+<main class="main-content">
+
+<header class="page-header">
+
+<div>
+
+<h1>
+
+Settings
+
+</h1>
+
+<p>
+
+Manage your account preferences and security.
+
+</p>
+
+</div>
+
+<div class="profile-box">
+
+<img
+
+src="images/avatar.png"
+
+id="profileImage"
+
+alt="Profile">
+
+<div>
+
+<h3 id="profileName">
+
+Loading...
+
+</h3>
+
+<p id="profileEmail">
+
+Loading...
+
+</p>
+
+</div>
+
+</div>
+
+</header>
+<!-- ==========================================
+ACCOUNT SETTINGS
+========================================== -->
+
+<section class="settings-grid">
+
+<div class="settings-card">
+
+<h2>
+
+<i class="fa-solid fa-user"></i>
+
+Account Information
+
+</h2>
+
+<form id="accountForm">
+
+<div class="input-group">
+
+<label>
+
+Full Name
+
+</label>
+
+<input
+type="text"
+id="fullName">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Phone Number
+
+</label>
+
+<input
+type="tel"
+id="phone">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Country
+
+</label>
+
+<input
+type="text"
+id="country">
+
+</div>
+
+<button
+type="submit"
+class="save-btn"
+id="saveAccountBtn">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Changes
+
+</button>
+
+</form>
+
+</div>
+<div class="settings-card">
+
+<h2>
+
+<i class="fa-solid fa-lock"></i>
+
+Security
+
+</h2>
+
+<form id="passwordForm">
+
+<div class="input-group">
+
+<label>
+
+New Password
+
+</label>
+
+<input
+type="password"
+id="newPassword">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Confirm Password
+
+</label>
+
+<input
+type="password"
+id="confirmPassword">
+
+</div>
+
+<button
+type="submit"
+class="save-btn"
+id="changePasswordBtn">
+
+<i class="fa-solid fa-key"></i>
+
+Change Password
+
+</button>
+
+</form>
+
+</div>
+<!-- ==========================================
+NOTIFICATION SETTINGS
+========================================== -->
+
+<div class="settings-card">
+
+<h2>
+
+<i class="fa-solid fa-bell"></i>
+
+Notification Preferences
+
+</h2>
+
+<form id="notificationForm">
+
+<label class="switch-row">
+
+<span>
+
+Email Notifications
+
+</span>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="emailNotifications">
+
+<span class="slider"></span>
+
+</label>
+
+</label>
+
+<label class="switch-row">
+
+<span>
+
+Deposit Notifications
+
+</span>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="depositNotifications">
+
+<span class="slider"></span>
+
+</label>
+
+</label>
+
+<label class="switch-row">
+
+<span>
+
+Withdrawal Notifications
+
+</span>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="withdrawNotifications">
+
+<span class="slider"></span>
+
+</label>
+
+</label>
+
+<label class="switch-row">
+
+<span>
+
+Investment Notifications
+
+</span>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="investmentNotifications">
+
+<span class="slider"></span>
+
+</label>
+
+</label>
+
+<button
+type="submit"
+class="save-btn"
+id="saveNotificationBtn">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Preferences
+
+</button>
+
+</form>
+
+</div>
+<!-- ==========================================
+ACCOUNT STATUS
+========================================== -->
+
+<div class="settings-card">
+
+<h2>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Account Status
+
+</h2>
+
+<div class="status-list">
+
+<div class="status-item">
+
+<span>
+
+Email Verification
+
+</span>
+
+<strong id="emailVerified">
+
+Loading...
+
+</strong>
+
+</div>
+
+<div class="status-item">
+
+<span>
+
+Account Status
+
+</span>
+
+<strong class="verified">
+
+Active
+
+</strong>
+
+</div>
+
+<div class="status-item">
+
+<span>
+
+Member Since
+
+</span>
+
+<strong id="memberSince">
+
+Loading...
+
+</strong>
+
+</div>
+
+<div class="status-item">
+
+<span>
+
+Last Login
+
+</span>
+
+<strong id="lastLogin">
+
+Loading...
+
+</strong>
+
+</div>
+
+</div>
+
+</div>
+<!-- ==========================================
+APPEARANCE
+========================================== -->
+
+<div class="settings-card">
+
+<h2>
+
+<i class="fa-solid fa-palette"></i>
+
+Appearance
+
+</h2>
+
+<div class="input-group">
+
+<label>
+
+Theme
+
+</label>
+
+<select id="theme">
+
+<option value="light">
+
+Light
+
+</option>
+
+<option value="dark">
+
+Dark (Coming Soon)
+
+</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Currency
+
+</label>
+
+<select id="currency">
+
+<option value="USD">
+
+USD ($)
+
+</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Language
+
+</label>
+
+<select id="language">
+
+<option value="en">
+
+English
+
+</option>
+
+</select>
+
+</div>
+
+<button
+class="save-btn"
+id="saveAppearanceBtn">
+
+<i class="fa-solid fa-paintbrush"></i>
+
+Save Appearance
+
+</button>
+
+</div>
+</section>
+
+<div
+id="alertBox">
+
+</div>
+<!-- ==========================================
+FOOTER
+========================================== -->
+
+<footer class="settings-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+
+<!-- ==========================================
+FIREBASE
+========================================== -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<!-- ==========================================
+SETTINGS SCRIPT
+========================================== -->
+
+<script
+type="module"
+src="js/settings.js"></script>
+
+</body>
+
+</html>

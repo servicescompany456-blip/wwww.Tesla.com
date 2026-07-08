@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Support | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/support.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+MOBILE MENU
+========================================== -->
+
+<button
+class="menu-btn"
+id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<!-- ==========================================
+SIDEBAR
+========================================== -->
+
+<aside
+class="sidebar"
+id="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Tesla</span> Investment
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="portfolio.html">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Portfolio
+
+</a>
+
+</li>
+
+<li>
+
+<a href="investment-plans.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Investment Plans
+
+</a>
+
+</li>
+
+<li>
+
+<a href="deposit.html">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+Deposit
+
+</a>
+
+</li>
+
+<li>
+
+<a href="withdraw.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+Withdraw
+
+</a>
+
+</li>
+
+<li>
+
+<a href="transactions.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Transactions
+
+</a>
+
+</li>
+
+<li>
+
+<a href="notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="support.html">
+
+<i class="fa-solid fa-headset"></i>
+
+Support
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ==========================================
+MAIN CONTENT
+========================================== -->
+
+<main class="main-content">
+
+<header class="page-header">
+
+<div>
+
+<h1>
+
+Customer Support
+
+</h1>
+
+<p>
+
+Need help? Contact our support team or submit a support ticket.
+
+</p>
+
+</div>
+
+<div class="profile-box">
+
+<img
+
+src="images/avatar.png"
+
+id="profileImage"
+
+alt="Profile">
+
+<div>
+
+<h3 id="profileName">
+
+Loading...
+
+</h3>
+
+<p id="profileEmail">
+
+Loading...
+
+</p>
+
+</div>
+
+</div>
+
+</header>
+<!-- ==========================================
+SUPPORT CONTACT
+========================================== -->
+
+<section class="support-contact">
+
+<div class="contact-card">
+
+<div class="contact-icon">
+
+<i class="fa-brands fa-telegram"></i>
+
+</div>
+
+<div>
+<!-- 
+<h3>
+
+Telegram Support
+
+</h3>
+
+<p>
+
+Chat with our support team for quick assistance.
+
+</p>
+
+<a
+
+href="https://t.me/YOUR_TELEGRAM_USERNAME"
+
+target="_blank"
+
+id="telegramSupport"
+
+class="telegram-btn">
+
+<i class="fa-brands fa-telegram"></i>
+
+Open Telegram
+
+</a>
+
+</div> -->
+
+</div>
+
+<div class="contact-card">
+
+<div class="contact-icon">
+
+<i class="fa-solid fa-clock"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Support Hours
+
+</h3>
+
+<p>
+
+Monday - Sunday
+
+</p>
+
+<strong>
+
+24 Hours Available
+
+</strong>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==========================================
+SUPPORT TICKET
+========================================== -->
+
+<section class="support-grid">
+
+<div class="support-card">
+
+<h2>
+
+<i class="fa-solid fa-ticket"></i>
+
+Submit Support Ticket
+
+</h2>
+
+<form id="supportForm">
+
+<div class="input-group">
+
+<label>
+
+Subject
+
+</label>
+
+<input
+type="text"
+id="subject"
+placeholder="Enter ticket subject"
+required>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Category
+
+</label>
+
+<select
+id="category"
+required>
+
+<option value="">
+
+Select Category
+
+</option>
+
+<option>
+
+Deposit
+
+</option>
+
+<option>
+
+Withdrawal
+
+</option>
+
+<option>
+
+Investment
+
+</option>
+
+<option>
+
+Account
+
+</option>
+
+<option>
+
+Technical
+
+</option>
+
+<option>
+
+Other
+
+</option>
+
+</select>
+
+</div>
+<div class="input-group">
+
+<label>
+
+Priority
+
+</label>
+
+<select
+id="priority"
+required>
+
+<option value="">
+
+Select Priority
+
+</option>
+
+<option value="Low">
+
+Low
+
+</option>
+
+<option value="Medium">
+
+Medium
+
+</option>
+
+<option value="High">
+
+High
+
+</option>
+
+<option value="Urgent">
+
+Urgent
+
+</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Message
+
+</label>
+
+<textarea
+
+id="message"
+
+rows="8"
+
+placeholder="Describe your issue in detail..."
+
+required>
+
+</textarea>
+
+</div>
+
+<button
+
+type="submit"
+
+class="submit-btn"
+
+id="submitTicketBtn">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Submit Ticket
+
+</button>
+
+</form>
+
+</div>
+<!-- ==========================================
+FAQ
+========================================== -->
+
+<div class="support-card">
+
+<h2>
+
+<i class="fa-solid fa-circle-question"></i>
+
+Frequently Asked Questions
+
+</h2>
+
+<div class="faq-item">
+
+<h4>
+
+How long do deposits take?
+
+</h4>
+
+<p>
+
+Deposits are usually reviewed and approved by our team within a short time after payment verification.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h4>
+
+Why is my withdrawal pending?
+
+</h4>
+
+<p>
+
+Withdrawals remain pending until they are reviewed and approved by the administrator.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h4>
+
+When will my investment complete?
+
+</h4>
+
+<p>
+
+Your investment will complete after the selected investment duration has ended and has been processed by the administrator.
+
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h4>
+
+How do I contact support?
+
+</h4>
+
+<p>
+
+Use the Telegram Support button above or submit a support ticket using the form.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==========================================
+MY SUPPORT TICKETS
+========================================== -->
+
+<section class="ticket-history">
+
+<div class="support-card">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-list"></i>
+
+My Support Tickets
+
+</h2>
+
+</div>
+
+<div
+
+id="ticketList"
+
+class="ticket-list">
+
+<div class="loading-card">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+<p>
+
+Loading your tickets...
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<div
+
+id="alertBox">
+
+</div>
+<!-- ==========================================
+FOOTER
+========================================== -->
+
+<footer class="support-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+
+<!-- ==========================================
+FIREBASE
+========================================== -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<!-- ==========================================
+SUPPORT SCRIPT
+========================================== -->
+
+<script
+type="module"
+src="js/support.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Telsa Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/admin.css">
+
+</head>
+
+<body>
+
+<!-- =====================================
+SIDEBAR
+===================================== -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Telsa</span> Admin
+
+</div>
+
+<ul>
+
+<li class="active">
+
+<a href="admin.html">
+
+<i class="fa-solid fa-gauge"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#users">
+
+<i class="fa-solid fa-users"></i>
+
+Users
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#deposits">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+Deposits
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#withdrawals">
+
+<i class="fa-solid fa-wallet"></i>
+
+Withdrawals
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#investments">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Investments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#notifications">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#" id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- =====================================
+MAIN CONTENT
+===================================== -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2>
+
+Admin Dashboard
+
+</h2>
+
+<p>
+
+Manage users, deposits, withdrawals and investments.
+
+</p>
+
+</div>
+
+<div class="admin-profile">
+
+<img
+src="images/avatar.png"
+id="adminImage"
+alt="Admin">
+
+<div>
+
+<h4 id="adminName">
+
+Loading...
+
+</h4>
+
+<p>
+
+Administrator
+
+</p>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =====================================
+SUMMARY
+===================================== -->
+
+<section class="summary-grid">
+
+<div class="summary-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h3>Total Users</h3>
+
+<h1 id="totalUsers">
+
+0
+
+</h1>
+
+</div>
+
+<div class="summary-card">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+<h3>Total Deposits</h3>
+
+<h1 id="totalDeposits">
+
+$0.00
+
+</h1>
+
+</div>
+
+<div class="summary-card">
+
+<i class="fa-solid fa-wallet"></i>
+
+<h3>Total Withdrawals</h3>
+
+<h1 id="totalWithdrawals">
+
+$0.00
+
+</h1>
+
+</div>
+
+<div class="summary-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Total Investments</h3>
+
+<h1 id="totalInvestments">
+
+$0.00
+
+</h1>
+
+</div>
+
+</section>
+<!-- =====================================
+USERS MANAGEMENT
+===================================== -->
+
+<section class="admin-card" id="users">
+
+<div class="card-header">
+
+<h3>
+
+Registered Users
+
+</h3>
+
+<div class="header-actions">
+
+<input
+type="text"
+id="searchUser"
+placeholder="Search by name or email...">
+
+</div>
+
+</div>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Photo</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Balance</th>
+
+<th>Portfolio</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="usersTable">
+
+<tr>
+
+<td colspan="7">
+
+Loading users...
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+DEPOSIT REQUESTS
+===================================== -->
+
+<section class="admin-card" id="deposits">
+
+<div class="card-header">
+
+<h3>
+
+Deposit Requests
+
+</h3>
+
+</div>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>User</th>
+
+<th>Amount</th>
+
+<th>Method</th>
+
+<th>Status</th>
+
+<th>Date</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="depositTable">
+
+<tr>
+
+<td colspan="6">
+
+No deposit requests.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+WITHDRAWAL REQUESTS
+===================================== -->
+
+<section class="admin-card" id="withdrawals">
+
+<div class="card-header">
+
+<h3>
+
+Withdrawal Requests
+
+</h3>
+
+</div>
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>User</th>
+
+<th>Amount</th>
+
+<th>Method</th>
+
+<th>Status</th>
+
+<th>Date</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="withdrawalTable">
+
+<tr>
+
+<td colspan="6">
+
+No withdrawal requests.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+NOTIFICATIONS
+===================================== -->
+
+<section class="admin-card" id="notifications">
+
+<div class="card-header">
+
+<h3>
+
+Send Notification
+
+</h3>
+
+</div>
+
+<form id="notificationForm">
+
+<input
+type="text"
+id="notificationTitle"
+placeholder="Notification Title"
+required>
+
+<textarea
+id="notificationMessage"
+placeholder="Write notification..."
+rows="5"
+required></textarea>
+
+<button
+type="submit"
+id="sendNotification">
+
+Send Notification
+
+</button>
+
+</form>
+
+</section>
+<!-- =====================================
+EDIT USER MODAL
+===================================== -->
+
+<div
+class="modal"
+id="editModal">
+
+<div class="modal-content">
+
+<span
+class="close-modal"
+id="closeModal">
+
+&times;
+
+</span>
+
+<h2>
+
+Edit User Account
+
+</h2>
+
+<input
+type="hidden"
+id="editUserId">
+
+<div class="form-group">
+
+<label>
+
+Balance
+
+</label>
+
+<input
+type="number"
+id="editBalance">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Portfolio
+
+</label>
+
+<input
+type="number"
+id="editPortfolio">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Total Deposits
+
+</label>
+
+<input
+type="number"
+id="editDeposits">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Total Withdrawals
+
+</label>
+
+<input
+type="number"
+id="editWithdrawals">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Total Profit
+
+</label>
+
+<input
+type="number"
+id="editProfit">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Account Status
+
+</label>
+
+<select id="editStatus">
+
+<option value="active">
+
+Active
+
+</option>
+
+<option value="suspended">
+
+Suspended
+
+</option>
+
+</select>
+
+</div>
+
+<button
+id="saveUser">
+
+Save Changes
+
+</button>
+
+</div>
+
+</div>
+<footer class="admin-footer">
+
+<p>
+
+© 2026 Telsa Investment • Admin Panel
+
+</p>
+
+</footer>
+
+</main>
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<script
+type="module"
+src="js/admin.js"></script>
+
+</body>
+
+</html>

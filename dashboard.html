@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+MOBILE MENU
+========================================== -->
+
+<button
+class="menu-btn"
+id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<!-- ==========================================
+SIDEBAR
+========================================== -->
+
+<aside
+class="sidebar"
+id="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Tesla</span> Investment
+
+</div>
+
+<ul>
+
+<li class="active">
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="portfolio.html">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Portfolio
+
+</a>
+
+</li>
+
+<li>
+
+<a href="investment-plans.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Investment Plans
+
+</a>
+
+</li>
+
+<li>
+
+<a href="deposit.html">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+Deposit
+
+</a>
+
+</li>
+
+<li>
+
+<a href="withdraw.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+Withdraw
+
+</a>
+
+</li>
+
+<li>
+
+<a href="transactions.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Transactions
+
+</a>
+
+</li>
+
+<li>
+
+<a href="notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="support.html">
+
+<i class="fa-solid fa-headset"></i>
+
+Support
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ==========================================
+MAIN CONTENT
+========================================== -->
+
+<main class="main-content">
+
+<header class="dashboard-header">
+
+<div class="welcome-box">
+
+<h1>
+
+Welcome,
+
+<span id="userName">
+
+Loading...
+
+</span>
+
+👋
+
+</h1>
+
+<p>
+
+Monitor your investment portfolio in real time.
+
+</p>
+
+</div>
+
+<div class="profile-box">
+
+<img
+
+src="images/avatar.png"
+
+id="profileImage"
+
+alt="Profile">
+
+<div>
+
+<h3 id="profileName">
+
+Loading...
+
+</h3>
+
+<p id="profileEmail">
+
+Loading...
+
+</p>
+
+</div>
+
+</div>
+
+</header>
+<!-- ==========================================
+SUMMARY CARDS
+========================================== -->
+
+<section class="summary-grid">
+
+<div class="summary-card">
+
+<div class="summary-icon wallet">
+
+<i class="fa-solid fa-wallet"></i>
+
+</div>
+
+<div class="summary-content">
+
+<h4>
+
+Wallet Balance
+
+</h4>
+
+<h2 id="walletBalance">
+
+$0.00
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<div class="summary-icon portfolio">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+</div>
+
+<div class="summary-content">
+
+<h4>
+
+Portfolio Balance
+
+</h4>
+
+<h2 id="portfolioBalance">
+
+$0.00
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<div class="summary-icon profit">
+
+<i class="fa-solid fa-sack-dollar"></i>
+
+</div>
+
+<div class="summary-content">
+
+<h4>
+
+Expected Profit
+
+</h4>
+
+<h2 id="expectedProfit">
+
+$0.000
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<div class="summary-icon return">
+
+<i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+<div class="summary-content">
+
+<h4>
+
+Expected Return
+
+</h4>
+
+<h2 id="expectedReturn">
+
+$0.00
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<div class="summary-icon active">
+
+<i class="fa-solid fa-layer-group"></i>
+
+</div>
+
+<div class="summary-content">
+
+<h4>
+
+Running Investments
+
+</h4>
+
+<h2 id="runningInvestments">
+
+0
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<div class="summary-icon completed">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<div class="summary-content">
+
+<h4>
+
+Completed Investments
+
+</h4>
+
+<h2 id="completedInvestments">
+
+0
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+QUICK ACTIONS
+========================================== -->
+
+<section class="quick-actions">
+
+<a href="deposit.html" class="action-card">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+<span>Deposit</span>
+
+</a>
+
+<a href="withdraw.html" class="action-card">
+
+<i class="fa-solid fa-wallet"></i>
+
+<span>Withdraw</span>
+
+</a>
+
+<a href="investment-plans.html" class="action-card">
+
+<i class="fa-solid fa-chart-column"></i>
+
+<span>Invest</span>
+
+</a>
+
+<a href="portfolio.html" class="action-card">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+<span>Portfolio</span>
+
+</a>
+
+</section>
+<!-- ==========================================
+DASHBOARD CONTENT
+========================================== -->
+
+<section class="dashboard-grid">
+
+<div class="left-panel">
+
+<div class="dashboard-card">
+
+<div class="card-header">
+
+<h3>
+
+Recent Transactions
+
+</h3>
+
+<a href="transactions.html">
+
+View All
+
+</a>
+
+</div>
+
+<div
+id="recentTransactions"
+class="transaction-list">
+
+<div class="loading-card">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+<p>
+
+Loading transactions...
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="dashboard-card">
+
+<div class="card-header">
+
+<h3>
+
+Recent Notifications
+
+</h3>
+
+<a href="notifications.html">
+
+View All
+
+</a>
+
+</div>
+
+<div
+id="recentNotifications"
+class="notification-list">
+
+<div class="loading-card">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+<p>
+
+Loading notifications...
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<aside class="right-panel">
+
+<div class="dashboard-card">
+
+<h3>
+
+Account Information
+
+</h3>
+
+<div class="account-info">
+
+<div>
+
+<span>Full Name</span>
+
+<strong id="accountName">
+
+Loading...
+
+</strong>
+
+</div>
+
+<div>
+
+<span>Email</span>
+
+<strong id="accountEmail">
+
+Loading...
+
+</strong>
+
+</div>
+
+<div>
+
+<span>Country</span>
+
+<strong id="accountCountry">
+
+Loading...
+
+</strong>
+
+</div>
+
+<div>
+
+<span>Phone</span>
+
+<strong id="accountPhone">
+
+Loading...
+
+</strong>
+
+</div>
+
+<div>
+
+<span>Member Since</span>
+
+<strong id="memberSince">
+
+Loading...
+
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</aside>
+
+</section>
+
+<footer class="dashboard-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Transactions | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/transactions.css">
+
+</head>
+
+<body>
+
+<!-- =====================================
+SIDEBAR
+===================================== -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Tesla</span> Investment
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="portfolio.html">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Portfolio
+
+</a>
+
+</li>
+
+<li>
+
+<a href="investment-plans.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Investment Plans
+
+</a>
+
+</li>
+
+<li>
+
+<a href="deposit.html">
+
+<i class="fa-solid fa-money-bill-transfer"></i>
+
+Deposit
+
+</a>
+
+</li>
+
+<li>
+
+<a href="withdraw.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+Withdraw
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="transactions.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Transactions
+
+</a>
+
+</li>
+
+<li>
+
+<a href="notifications.html">
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- =====================================
+MAIN CONTENT
+===================================== -->
+
+<main class="main-content">
+
+<header class="page-header">
+
+<div>
+
+<h1>
+
+Transaction History
+
+</h1>
+
+<p>
+
+View all deposits, withdrawals, investments and account activity.
+
+</p>
+
+</div>
+
+<div class="header-actions">
+
+<input
+type="text"
+id="searchTransaction"
+placeholder="Search Transaction ID...">
+
+</div>
+
+</header>
+<!-- =====================================
+FILTERS
+===================================== -->
+
+<section class="filter-bar">
+
+<button
+class="filter-btn active"
+data-filter="all">
+
+All
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="Deposit">
+
+Deposits
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="Withdrawal">
+
+Withdrawals
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="Investment">
+
+Investments
+
+</button>
+
+<button
+class="filter-btn"
+data-filter="Profit">
+
+Profits
+
+</button>
+
+</section>
+<!-- =====================================
+TRANSACTION LIST
+===================================== -->
+
+<section class="transactions-wrapper">
+
+<div
+id="transactionList"
+class="transaction-list">
+
+<div class="loading-card">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+<h3>
+
+Loading Transactions...
+
+</h3>
+
+<p>
+
+Please wait while we retrieve your transaction history.
+
+</p>
+
+</div>
+
+</div>
+
+<div
+id="emptyState"
+class="empty-state"
+style="display:none;">
+
+<i class="fa-solid fa-receipt"></i>
+
+<h2>
+
+No Transactions Found
+
+</h2>
+
+<p>
+
+Your deposits, withdrawals, investments, and profits will appear here automatically.
+
+</p>
+
+</div>
+
+</section>
+<!-- =====================================
+DELETE TRANSACTION MODAL
+===================================== -->
+
+<div
+class="modal"
+id="deleteModal">
+
+<div class="modal-content">
+
+<div class="modal-icon">
+
+<i class="fa-solid fa-trash-can"></i>
+
+</div>
+
+<h2>
+
+Delete Transaction?
+
+</h2>
+
+<p>
+
+This transaction will be permanently removed.
+
+</p>
+
+<div class="modal-actions">
+
+<button
+id="cancelDelete"
+class="cancel-btn">
+
+Cancel
+
+</button>
+
+<button
+id="confirmDelete"
+class="delete-btn">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+<!-- =====================================
+FOOTER
+===================================== -->
+
+<footer class="page-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+
+<!-- =====================================
+TRANSACTION DETAILS MODAL
+===================================== -->
+
+<div
+class="modal"
+id="transactionModal">
+
+<div class="modal-content">
+
+<h2>
+
+Transaction Details
+
+</h2>
+
+<div id="transactionDetails">
+
+</div>
+
+<div class="modal-actions">
+
+<button
+id="closeTransactionModal"
+class="cancel-btn">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =====================================
+FIREBASE
+===================================== -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<!-- =====================================
+TRANSACTIONS
+===================================== -->
+
+<script
+type="module"
+src="js/transactions.js"></script>
+
+</body>
+
+</html>

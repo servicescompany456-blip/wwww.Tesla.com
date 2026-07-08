@@ -1,0 +1,690 @@
+/* ==========================================================
+   TELSA INVESTMENT
+   INVESTMENT PLANS
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+:root{
+
+    --primary:#0d2b52;
+
+    --secondary:#f4b400;
+
+    --secondary-dark:#d89c00;
+
+    --background:#f5f7fb;
+
+    --white:#ffffff;
+
+    --text:#1f2937;
+
+    --gray:#6b7280;
+
+    --border:#e5e7eb;
+
+    --shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    display:flex;
+
+}
+
+/* ==========================
+SIDEBAR
+========================== */
+
+.sidebar{
+
+    width:270px;
+
+    height:100vh;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    overflow:auto;
+
+    padding:30px 0;
+
+}
+
+.logo{
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:45px;
+
+}
+
+.logo span{
+
+    color:var(--secondary);
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    margin:12px 20px;
+
+}
+
+.sidebar a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.sidebar .active a{
+
+    background:var(--secondary);
+
+    color:#000;
+
+}
+
+/* ==========================
+MAIN CONTENT
+========================== */
+
+.main-content{
+
+    margin-left:270px;
+
+    width:calc(100% - 270px);
+
+    padding:35px;
+
+}
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h2{
+
+    color:var(--primary);
+
+    font-size:34px;
+
+}
+
+.topbar p{
+
+    color:var(--gray);
+
+    margin-top:8px;
+
+}
+
+.account-summary{
+
+    text-align:right;
+
+}
+
+.account-summary p{
+
+    color:var(--gray);
+
+}
+
+.account-summary h2{
+
+    color:var(--secondary);
+
+    font-size:34px;
+
+}
+
+/* ==========================
+HEADER
+========================== */
+
+.plans-header{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.plans-header h2{
+
+    color:var(--primary);
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.plans-header p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+}
+
+/* ==========================
+GRID
+========================== */
+
+.plans-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+/* ==========================
+PLAN CARD
+========================== */
+
+.plan-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.plan-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.plan-badge{
+
+    position:absolute;
+
+    top:20px;
+
+    right:-40px;
+
+    width:140px;
+
+    text-align:center;
+
+    padding:8px;
+
+    transform:rotate(45deg);
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:700;
+
+}
+
+.plan-card h2{
+
+    color:var(--primary);
+
+    margin-top:20px;
+
+}
+
+.plan-card h1{
+
+    font-size:58px;
+
+    margin:20px 0 5px;
+
+    color:var(--secondary);
+
+}
+
+.plan-card p{
+
+    color:var(--gray);
+
+    margin-bottom:25px;
+
+}
+
+.plan-card ul{
+
+    list-style:none;
+
+}
+
+.plan-card ul li{
+
+    margin:14px 0;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.plan-card ul i{
+
+    color:#16a34a;
+
+}
+/* ==========================
+PLAN COLORS
+========================== */
+
+.starter .plan-badge{
+
+    background:#22c55e;
+
+}
+
+.silver .plan-badge{
+
+    background:#94a3b8;
+
+}
+
+.gold .plan-badge{
+
+    background:#f59e0b;
+
+}
+
+.diamond .plan-badge{
+
+    background:#3b82f6;
+
+}
+
+.vip .plan-badge{
+
+    background:#7c3aed;
+
+}
+
+.starter{
+
+    border-top:6px solid #22c55e;
+
+}
+
+.silver{
+
+    border-top:6px solid #94a3b8;
+
+}
+
+.gold{
+
+    border-top:6px solid #f59e0b;
+
+}
+
+.diamond{
+
+    border-top:6px solid #3b82f6;
+
+}
+
+.vip{
+
+    border-top:6px solid #7c3aed;
+
+}
+
+
+/* ==========================
+INVEST BUTTON
+========================== */
+
+.invest-btn{
+
+    width:100%;
+
+    margin-top:30px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.invest-btn:hover{
+
+    background:var(--secondary);
+
+    color:#000;
+
+    transform:translateY(-3px);
+
+}
+/* ==========================
+BENEFITS
+========================== */
+
+.benefits{
+
+    margin-top:70px;
+
+}
+
+.benefits h2{
+
+    text-align:center;
+
+    color:var(--primary);
+
+    margin-bottom:40px;
+
+}
+
+.benefits-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.benefit-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.benefit-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.benefit-card i{
+
+    font-size:50px;
+
+    color:var(--secondary);
+
+    margin-bottom:20px;
+
+}
+
+.benefit-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.benefit-card p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================
+FOOTER
+========================== */
+
+.plans-footer{
+
+    margin-top:60px;
+
+    text-align:center;
+
+    color:var(--gray);
+
+    padding:20px 0;
+
+}
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:1200px){
+
+.topbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+
+    display:block;
+
+}
+
+.sidebar{
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+.sidebar ul{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+.topbar h2{
+
+    font-size:28px;
+
+}
+
+.account-summary{
+
+    text-align:left;
+
+}
+
+.plans-header h2{
+
+    font-size:28px;
+
+}
+
+.plan-card{
+
+    padding:25px;
+
+}
+
+.plan-card h1{
+
+    font-size:46px;
+
+}
+
+}
+/* ==========================
+SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--secondary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef2f7;
+
+}
+
+
+/* ==========================
+PAGE ANIMATION
+========================== */
+
+.main-content{
+
+    animation:fadeIn .5s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

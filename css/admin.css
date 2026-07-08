@@ -1,0 +1,886 @@
+/* ==========================================================
+   TELSA INVESTMENT
+   ADMIN DASHBOARD
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =====================================
+RESET
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --primary:#0d2b52;
+    --secondary:#f4b400;
+    --secondary-dark:#d89c00;
+
+    --background:#f5f7fb;
+    --white:#ffffff;
+
+    --text:#1f2937;
+    --gray:#6b7280;
+
+    --border:#e5e7eb;
+
+    --success:#16a34a;
+    --danger:#dc2626;
+
+    --shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    display:flex;
+
+}
+
+
+/* =====================================
+SIDEBAR
+===================================== */
+
+.sidebar{
+
+    width:270px;
+
+    height:100vh;
+
+    background:var(--primary);
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    overflow:auto;
+
+    color:#fff;
+
+    padding:30px 0;
+
+}
+
+.logo{
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:45px;
+
+}
+
+.logo span{
+
+    color:var(--secondary);
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    margin:12px 20px;
+
+}
+
+.sidebar a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+    background:rgba(255,255,255,.10);
+
+}
+
+.sidebar .active a{
+
+    background:var(--secondary);
+
+    color:#000;
+
+}
+
+
+/* =====================================
+MAIN
+===================================== */
+
+.main-content{
+
+    margin-left:270px;
+
+    width:calc(100% - 270px);
+
+    padding:35px;
+
+}
+
+
+/* =====================================
+TOPBAR
+===================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h2{
+
+    font-size:34px;
+
+    color:var(--primary);
+
+}
+
+.topbar p{
+
+    color:var(--gray);
+
+    margin-top:8px;
+
+}
+
+.admin-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.admin-profile img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid var(--secondary);
+
+}
+/* =====================================
+SUMMARY CARDS
+===================================== */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.summary-card{
+
+    background:var(--white);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.summary-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.summary-card i{
+
+    font-size:34px;
+
+    color:var(--secondary);
+
+    margin-bottom:18px;
+
+}
+
+.summary-card h3{
+
+    color:var(--gray);
+
+    font-size:16px;
+
+    margin-bottom:10px;
+
+}
+
+.summary-card h1{
+
+    color:var(--primary);
+
+    font-size:32px;
+
+}
+/* =====================================
+CARDS
+===================================== */
+
+.admin-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin-bottom:35px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.card-header h3{
+
+    color:var(--primary);
+
+}
+
+.header-actions input{
+
+    width:280px;
+
+    padding:12px 15px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    outline:none;
+
+}
+
+.header-actions input:focus{
+
+    border-color:var(--secondary);
+
+}
+
+/* ==========================================================
+   ADMIN.CSS - PART 2
+   TABLES • BUTTONS • MODAL • RESPONSIVE
+========================================================== */
+
+
+/* =====================================
+TABLE
+===================================== */
+
+.table-wrapper{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+th{
+
+    padding:16px;
+
+    text-align:left;
+
+    font-size:15px;
+
+}
+
+td{
+
+    padding:16px;
+
+    border-bottom:1px solid var(--border);
+
+    vertical-align:middle;
+
+}
+
+tbody tr{
+
+    transition:.25s;
+
+}
+
+tbody tr:hover{
+
+    background:#f8fafc;
+
+}
+
+
+/* =====================================
+USER IMAGE
+===================================== */
+
+.user-photo{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid var(--secondary);
+
+}
+
+
+/* =====================================
+STATUS
+===================================== */
+
+.status{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.status.active{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.status.pending{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+.status.suspended{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+
+/* =====================================
+BUTTONS
+===================================== */
+
+button{
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+.edit-btn{
+
+    border:none;
+
+    padding:10px 16px;
+
+    border-radius:10px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    transition:.3s;
+
+}
+
+.edit-btn:hover{
+
+    background:#133d73;
+
+}
+
+.approve-btn{
+
+    border:none;
+
+    padding:8px 15px;
+
+    border-radius:8px;
+
+    background:var(--success);
+
+    color:#fff;
+
+    margin-right:8px;
+
+}
+
+.reject-btn{
+
+    border:none;
+
+    padding:8px 15px;
+
+    border-radius:8px;
+
+    background:var(--danger);
+
+    color:#fff;
+
+}
+
+
+/* =====================================
+NOTIFICATION FORM
+===================================== */
+
+#notificationForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+#notificationForm input,
+#notificationForm textarea,
+.modal-content input,
+.modal-content select{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+#notificationForm input:focus,
+#notificationForm textarea:focus,
+.modal-content input:focus,
+.modal-content select:focus{
+
+    border-color:var(--secondary);
+
+}
+
+#notificationForm button{
+
+    background:var(--secondary);
+
+    color:#000;
+
+    border:none;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+#notificationForm button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* =====================================
+MODAL
+===================================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.modal-content{
+
+    width:95%;
+
+    max-width:650px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    position:relative;
+
+    animation:popup .35s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.close-modal{
+
+    position:absolute;
+
+    top:18px;
+
+    right:20px;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+.form-group{
+
+    margin-bottom:18px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+#saveUser{
+
+    width:100%;
+
+    border:none;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    background:var(--secondary);
+
+    color:#000;
+
+    font-size:17px;
+
+    font-weight:700;
+
+}
+
+
+/* =====================================
+FOOTER
+===================================== */
+
+.admin-footer{
+
+    margin-top:40px;
+
+    padding:25px 0;
+
+    text-align:center;
+
+    color:var(--gray);
+
+    border-top:1px solid var(--border);
+
+}
+
+
+/* =====================================
+RESPONSIVE
+===================================== */
+
+@media(max-width:1100px){
+
+.sidebar{
+
+    width:90px;
+
+}
+
+.sidebar .logo span,
+.sidebar li a{
+
+    font-size:0;
+
+}
+
+.sidebar li a i{
+
+    font-size:22px;
+
+}
+
+.main-content{
+
+    margin-left:90px;
+
+    width:calc(100% - 90px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+
+    display:block;
+
+}
+
+.sidebar{
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+.sidebar ul{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.card-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.header-actions input{
+
+    width:100%;
+
+}
+
+.modal-content{
+
+    padding:25px;
+
+}
+
+}
+
+
+/* =====================================
+SCROLLBAR
+===================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--secondary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef2f7;
+
+}
+
+
+/* =====================================
+PAGE ANIMATION
+===================================== */
+
+.main-content{
+
+    animation:fadeIn .5s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

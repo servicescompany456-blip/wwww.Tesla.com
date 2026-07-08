@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Invest Now | Tesla Investment</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="css/invest.css">
+
+</head>
+
+<body>
+
+<!-- ==========================
+SIDEBAR
+========================== -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Tesla</span> Investment
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="investment-plans.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Investment Plans
+
+</a>
+
+</li>
+
+<li>
+
+<a href="">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Portfolio
+
+</a>
+
+</li>
+
+<li>
+
+<a href="transactions.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Transactions
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ==========================
+MAIN
+========================== -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2>
+
+Start Investment
+
+</h2>
+
+<p>
+
+Review your selected investment plan before investing.
+
+</p>
+
+</div>
+
+</header>
+
+<div id="alertBox"></div>
+
+<section class="invest-grid">
+
+<div class="invest-card">
+
+<h2>
+
+Investment Details
+
+</h2>
+
+<form id="investForm">
+    <div class="input-group">
+
+<label>
+
+Selected Plan
+
+</label>
+
+<input
+type="text"
+id="planName"
+readonly>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+ROI
+
+</label>
+
+<input
+type="text"
+id="roi"
+readonly>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Duration
+
+</label>
+
+<input
+type="text"
+id="duration"
+readonly>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Minimum Investment
+
+</label>
+
+<input
+type="text"
+id="minimum"
+readonly>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Maximum Investment
+
+</label>
+
+<input
+type="text"
+id="maximum"
+readonly>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Available Balance
+
+</label>
+
+<input
+type="text"
+id="availableBalance"
+readonly>
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Investment Amount (USD)
+
+</label>
+
+<input
+type="number"
+id="investmentAmount"
+min="1"
+placeholder="Enter amount"
+required>
+
+</div>
+<div class="checkbox-group">
+
+<label>
+
+<input
+type="checkbox"
+id="agreeInvestment"
+required>
+
+I understand that this investment will deduct funds from my account balance.
+
+</label>
+
+</div>
+<!-- =====================================
+INVESTMENT NOTICE
+===================================== -->
+
+<div class="investment-note">
+
+<i class="fa-solid fa-circle-info"></i>
+
+<div>
+
+<strong>
+
+Investment Notice
+
+</strong>
+
+<p>
+
+Please review your investment details carefully. Once your investment is confirmed, the investment amount will be deducted from your available balance and added to your investment portfolio.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- =====================================
+SUBMIT
+===================================== -->
+
+<button
+type="submit"
+class="submit-btn"
+id="submitBtn">
+
+<span id="submitText">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Start Investment
+
+</span>
+
+<span
+id="loadingSpinner"
+style="display:none;">
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+Processing...
+
+</span>
+
+</button>
+
+</form>
+
+</div>
+<!-- =====================================
+RIGHT PANEL
+===================================== -->
+
+<aside class="summary-panel">
+
+<div class="summary-card">
+
+<h3>
+
+Investment Summary
+
+</h3>
+
+<div class="summary-item">
+
+<span>
+
+Plan
+
+</span>
+
+<strong id="summaryPlan">
+
+-
+
+</strong>
+
+</div>
+
+<div class="summary-item">
+
+<span>
+
+Investment
+
+</span>
+
+<strong id="summaryAmount">
+
+$0.00
+
+</strong>
+
+</div>
+
+<div class="summary-item">
+
+<span>
+
+ROI
+
+</span>
+
+<strong id="summaryROI">
+
+0%
+
+</strong>
+
+</div>
+
+<div class="summary-item">
+
+<span>
+
+Duration
+
+</span>
+
+<strong id="summaryDuration">
+
+0 Days
+
+</strong>
+
+</div>
+
+<div class="summary-item">
+
+<span>
+
+Expected Profit
+
+</span>
+
+<strong id="expectedProfit">
+
+$0.00
+
+</strong>
+
+</div>
+
+<div class="summary-item">
+
+<span>
+
+Expected Return
+
+</span>
+
+<strong id="expectedReturn">
+
+$0.00
+
+</strong>
+
+</div>
+
+</div>
+<div class="summary-card">
+
+<h3>
+
+Investment Benefits
+
+</h3>
+
+<ul class="benefits-list">
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Professional portfolio management
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Secure investment tracking
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Transparent investment history
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Real-time portfolio updates
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Dedicated customer support
+
+</li>
+
+</ul>
+
+</div>
+
+</aside>
+
+</section>
+<!-- =====================================
+FOOTER
+===================================== -->
+
+<footer class="invest-footer">
+
+<p>
+
+© 2026 Tesla Investment. All Rights Reserved.
+
+</p>
+
+</footer>
+
+</main>
+
+<!-- =====================================
+FIREBASE
+===================================== -->
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<!-- =====================================
+INVEST
+===================================== -->
+
+<script
+type="module"
+src="js/invest.js"></script>
+
+</body>
+
+</html>
